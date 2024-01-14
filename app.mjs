@@ -6,7 +6,7 @@ import fs from 'fs';
 
 const youtube = (apikey, image, audio) => {
     let currentImage = image;
-    let currentDest = "../streami/b.jpg"; // Initialize with b.jpg
+    let currentDest = "../SFU-Youtube-Traffic-Livestream/b.jpg"; // Initialize with b.jpg
     let mainFfmpeg, bufferFfmpeg;
 
     const startFfmpeg = (isBuffer = false) => {
@@ -70,7 +70,7 @@ const youtube = (apikey, image, audio) => {
             .then((canvas) => {
                 // Dynamically switch between a.jpg and b.jpg
                 currentImage = (currentImage === 'a.jpg') ? 'b.jpg' : 'a.jpg';
-                currentDest = (currentDest === "../streami/a.jpg") ? "../streami/b.jpg" : "../streami/a.jpg";
+                currentDest = (currentDest === "../SFU-Youtube-Traffic-Livestream/a.jpg") ? "../SFU-Youtube-Traffic-Livestream/b.jpg" : "../SFU-Youtube-Traffic-Livestream/a.jpg";
 
                 const src = canvas.jpegStream();
                 const dest = fs.createWriteStream(currentDest);
